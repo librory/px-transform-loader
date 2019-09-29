@@ -10,14 +10,11 @@ const defaultOptions = {
 }
 
 const _replaceCb = (value, { rootPx, precision, roundingMethod, min } = {}) => {
-  console.log('origin:', value)
   if (value < min) return value + 'px'
+
   const roundFn = roundingMethod === 'enter' ? Math.ceil : Math.floor
   const coeffient = Math.pow(10, precision)
-
   const ret = roundFn((value / rootPx) * coeffient) / coeffient + 'rem'
-
-  console.log('result:', ret)
 
   return ret
 }

@@ -26,7 +26,8 @@ module: {
 # 参数说明
 
 参数名 | 作用 | 默认值
-rootPx | 设置根元素的px值 | 12 |
-precision | 精度 | 4 |
-roundingMethod | 舍入方法（round：四舍五入；enter：进一） | round |
-min | 最小转换值（类似于1px的border，一般不希望被转换） | 2 |
+:-|:-|:-
+rootPx | 设置根元素的px值 | 12
+precision | 精度 | 4
+roundingMethod | 舍入方法（round：四舍五入；enter：进一） | round
+min | 最小转换值（类似于1px的border，一般不希望被转换） | 2
