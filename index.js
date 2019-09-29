@@ -43,7 +43,7 @@ module.exports = function(source) {
     rule.declarations.forEach(declaration => {
       if (!declaration.value) return
 
-      declaration.value = declaration.value.replace(/([\d\.]+)px/, (...item) =>
+      declaration.value = declaration.value.replace(/([\d\.]+)px/g, (...item) =>
         _replaceCb(Number(item[1]), options)
       )
     })
