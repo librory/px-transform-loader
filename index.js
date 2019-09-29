@@ -5,7 +5,7 @@ var validateOptions = require('schema-utils')
 const defaultOptions = {
   rootPx: 12,
   precision: 4,
-  roundingMethod: 'round', //round:四舍五入 enter:进一
+  roundingMethod: 'enter', //round:四舍五入 enter:进一
   min: 2
 }
 

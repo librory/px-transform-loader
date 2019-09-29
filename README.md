@@ -10,7 +10,7 @@ const pxTransformLoader = require('px-transform-loader')
 const pxTransformLoaderOptions = {
   rootPx: 12,
   precision: 4,
-  roundingMethod: 'round', //round:四舍五入 enter:进一
+  roundingMethod: 'enter', //round:四舍五入 enter:进一
   min: 2
 }
 
@@ -45,5 +45,5 @@ module: {
 | :------------- | :--------------------------------------------------- | :----- |
 | rootPx         | 设置根元素的 px 值                                   | 12     |
 | precision      | 精度                                                 | 4      |
-| roundingMethod | 舍入方法（round：四舍五入；enter：进一）             | round  |
+| roundingMethod | 舍入方法（round：四舍五入；enter：进一）             | enter  |
 | min            | 最小转换值（类似于 1px 的 border，一般不希望被转换） | 2      |
