@@ -22,10 +22,10 @@ const _replaceCb = (value, { rootPx, precision, roundingMethod, min } = {}) => {
 const schema = {
   type: 'object',
   properties: {
-    rootPx: { type: 'number' },
-    precision: { type: 'number' },
+    rootPx: { type: ['number', 'string'] },
+    precision: { type: ['number', 'string'] },
     roundingMethod: { type: 'string' },
-    min: { type: 'number' }
+    min: { type: ['number', 'string'] }
   }
 }
 
@@ -39,7 +39,10 @@ module.exports = function(source) {
   let ast = css.parse(source)
   ast.stylesheet.rules.forEach(rule => {
     if (rule.type !== 'rule') return
+
     rule.declarations.forEach(declaration => {
+      if (!declaration.value) return
+
       declaration.value = declaration.value.replace(/([\d\.]+)px/, (...item) =>
         _replaceCb(Number(item[1]), options)
       )
